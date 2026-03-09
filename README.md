@@ -44,8 +44,8 @@ _Setup & Installation_
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/Safwan02ck/railway-reservation-system.git
-cd railway-reservation-system
+git clone (https://github.com/khu-lood/Railway-Reservation-System)
+cd Railway-Reservation-System
 ```
 
 ### 2. Install Python dependencies
