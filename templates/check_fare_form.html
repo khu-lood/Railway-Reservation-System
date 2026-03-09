@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="form-container">
+        <h2>Check Fare</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="from">From (Station Code):</label>
+                <input type="text" id="from" name="from" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="to">To (Station Code):</label>
+                <input type="text" id="to" name="to" required>
+            </div>
+            
+            <button type="submit">Check Fare</button>
+        </form>
+    </div>
+{% endblock %}

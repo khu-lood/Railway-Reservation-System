@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="menu">
+        <h2>Main Menu</h2>
+        <div class="menu-options">
+            <a href="{{ url_for('availaible_trains') }}" class="menu-option">
+                <h3>Available Trains</h3>
+                <p>Search for available trains</p>
+            </a>
+            <a href="{{ url_for('book_train') }}" class="menu-option">
+                <h3>Book Ticket</h3>
+                <p>Book a new train ticket</p>
+            </a>
+            <a href="{{ url_for('show_bookings') }}" class="menu-option">
+                <h3>My Bookings</h3>
+                <p>View your bookings</p>
+            </a>
+            <a href="{{ url_for('check_fare') }}" class="menu-option">
+                <h3>Check Fare</h3>
+                <p>Calculate ticket prices</p>
+            </a>
+            <a href="{{ url_for('cancel_booking') }}" class="menu-option">
+                <h3>Cancel Booking</h3>
+                <p>Cancel existing bookings</p>
+            </a>
+            <a href="{{ url_for('about') }}" class="menu-option">
+                <h3>About</h3>
+                <p>Learn about our system</p>
+            </a>
+        </div>
+    </div>
+{% endblock %}

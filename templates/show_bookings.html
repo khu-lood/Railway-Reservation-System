@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="results-container">
+        <h2>My Bookings</h2>
+        
+        {% if bookings %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Train No</th>
+                        <th>Passenger Name</th>
+                        <th>Mobile No</th>
+                        <th>Aadhaar No</th>
+                        <th>Booking Time</th>
+                        <th>Booking ID</th>
+                        <th>Class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in bookings %}
+                        <tr>
+                            <td>{{ booking[0] }}</td>
+                            <td>{{ booking[1] }}</td>
+                            <td>{{ booking[2] }}</td>
+                            <td>{{ booking[3] }}</td>
+                            <td>{{ booking[4] }}</td>
+                            <td>{{ booking[5] }}</td>
+                            <td>{{ booking[6] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No bookings found.</p>
+        {% endif %}
+    </div>
+{% endblock %}

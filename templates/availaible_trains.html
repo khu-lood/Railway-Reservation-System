@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="results-container">
+        <h2>Available Trains</h2>
+        
+        {% if trains %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Train No</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Arrival Time</th>
+                        <th>Departure Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for train in trains %}
+                        <tr>
+                            <td>{{ train[0] }}</td>
+                            <td>{{ train[1] }}</td>
+                            <td>{{ train[2] }}</td>
+                            <td>{{ train[3] }}</td>
+                            <td>{{ train[4] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="no-results">No trains available for the selected route and date.</p>
+        {% endif %}
+        
+        <!-- Debugging information (visible only in development) -->
+        {% if config.DEBUG %}
+            <div class="debug-info">
+                <h3>Debug Information</h3>
+                <p>Query Results: {{ trains }}</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

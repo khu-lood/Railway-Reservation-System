@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="results-container">
+        <h2>Fare Details</h2>
+        
+        {% if fares %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Train No</th>
+                        <th>Distance (km)</th>
+                        <th>Sleeper (Rs)</th>
+                        <th>Third AC (Rs)</th>
+                        <th>Second AC (Rs)</th>
+                        <th>First AC (Rs)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fare in fares %}
+                        <tr>
+                            <td>{{ fare.train_no }}</td>
+                            <td>{{ fare.distance }}</td>
+                            <td>{{ fare.sleeper }}</td>
+                            <td>{{ fare.third_ac }}</td>
+                            <td>{{ fare.second_ac }}</td>
+                            <td>{{ fare.first_ac }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No fare information available for the selected route.</p>
+        {% endif %}
+    </div>
+{% endblock %}

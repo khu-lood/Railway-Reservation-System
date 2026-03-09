@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="form-container">
+        <h2>Cancel Booking</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="booking_id">Booking ID:</label>
+                <input type="number" id="booking_id" name="booking_id" required>
+            </div>
+            
+            <button type="submit">Cancel Booking</button>
+        </form>
+    </div>
+{% endblock %}

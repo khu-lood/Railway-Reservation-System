@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Railway Reservation System</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('menu') }}">Home</a></li>
+            <li><a href="{{ url_for('availaible_trains') }}">Availaible Trains</a></li>
+            <li><a href="{{ url_for('book_train') }}">Book Ticket</a></li>
+            <li><a href="{{ url_for('show_bookings') }}">My Bookings</a></li>
+            <li><a href="{{ url_for('check_fare') }}">Check Fare</a></li>
+            <li><a href="{{ url_for('cancel_booking') }}">Cancel Booking</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; Railway Reservation System</p>
+    </footer>
+</body>
+</html>
